@@ -7,20 +7,15 @@
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
     <script>
-        var x=123;
-        console.log("ToString :"+x.toString());//convert number to string
-        //toFixed->return a string with a number written with specified number od decimals
-        var y=9.656;
-        console.log("ToFixed :"+y.toFixed(0));
-        console.log("ToFixed :"+y.toFixed(1));
-        console.log(Math.PI);
-        console.log(Math.round(y));
-        console.log(Math.pow(2,3));
-        console.log(Math.sqrt(121));
-        console.log(Math.abs(-48));
-        console.log(Math.ceil(y));
-        console.log(Math.floor(y));
-        console.log(Math.min(45,5,23,89,21));
-        console.log(Math.random(2,9));
+        console.log(Math.random());//return random number b/t 0 and 1
+        //random number b/t 0-9
+        console.log("Random 0-9->"+Math.floor(Math.random()*10));
+        //random number b/t 0-99
+        console.log("Random 0-99->"+Math.floor(Math.random()*100));
+        //genetating random number b/t 2 numbers
+        var min=6;
+        var max=20;
+        console.log("Rand No b/t 2 numbers :"+Math.floor(Math.random()*(max-min)));
+
     </script>
 </html>
