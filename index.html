@@ -5,22 +5,8 @@
     </head>
     <body>
         <h1>This is my header ,Welcome</h1>
-        <p id="globalvariable">This is my para</p>
-    </body>
-    <script>
-        var name;
-        function myfunction()
-        {
-            name="Jai";
-            console.log(name);
-        }
-        function myfunction2()
-        {
-            name="Archit";
-            console.log(name);
-        }
-        myfunction();
-        myfunction2();
-        document.getElementById("globalvariable").innerHTML="In HTML "+window.name;
+        <p id="p1">This is my para</p>
+        <button onClick="document.getElementById('p1').innerHTML='Button Work';">Click Me</button>
+        
     </script>
 </html>
