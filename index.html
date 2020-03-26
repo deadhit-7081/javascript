@@ -6,8 +6,32 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
-        <button onClick="this.innerHTML='Button content changed';">Click Me</button>
-        <button onmouseover="this.innerHTML='Button content changed';" onmouseout="this.innerHTML='Click me'" >Changes when mouse comes over</button>
-        
+        <p id="p3"></p>
+        <p id="p2"></p>
+    <script>
+        str="Hi Jai I am Good! How are you Jai"
+        document.getElementById("p3").innerHTML=str;
+        console.log(str.length)
+        document.getElementById("p2").innerHTML=str.length;
+        document.getElementById("p2").innerHTML="Position of Jai in str-"+str.lastIndexOf('Jai');
+        document.getElementById("p2").innerHTML=str.search('Jai');
+        //string extraction
+        console.log("Slice :"+str.slice(7,12));
+        console.log("Substring :"+str.substring(7,12));
+        console.log("SUbstr :"+str.substr(7,3));
+        //Repalce Content of string
+        console.log("Str Upgrade :"+str.replace('Jai','Archit'));
+        //replace repetative string
+        var replace=str.replace(/Jai/g,'Archit')//g->global
+        console.log("Replace repetative String :"+replace);
+        //tolowercase and touppercase
+        console.log("LowerCase :"+str.toLowerCase());
+        console.log("UpperCase :"+str.toUpperCase());
+        //extract particular Character
+        console.log("CharAt:"+str.charAt(0));
+        console.log("Character CodeAt:"+str.charCodeAt(0));
+        //converting string into array
+        var strarray=str.split(',');
+        console.log("Array :"+strarray);
     </script>
 </html>
