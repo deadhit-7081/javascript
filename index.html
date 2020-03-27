@@ -6,45 +6,60 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
+        <h2>Date</h2>
         <p id="p2"></p>
         <p id="p3"></p>
         <p id="p4"></p>
         <p id="p5"></p>
-        <h2>Date</h2>
+
     <script>
-        document.getElementById("p1").innerHTML=new Date();
-        //Creating date format mm/dd/yyyy
-        document.getElementById("p2").innerHTML=new Date('12/31/2010');
-        var d=new Date();
-        document.getElementById("p3").innerHTML=d;
-        document.getElementById("p4").innerHTML=d.toUTCString();//GMT format
-        document.getElementById("p5").innerHTML=d.toDateString();
-        //get method
-        console.log("Date :"+d.getDate());
-        console.log("Day :"+d.getDay());// 5->saturday
-        console.log("Year :"+d.getFullYear());
-        console.log("Time :"+d.getTime());//gives in milli seconde
-        //setDate
-        console.log("SetDate :"+d.setDate(09));
-        console.log("Date :"+d.getDate());
-        console.log("Day :"+d.getDay());
-        d.setYear(2056);
-        console.log("Year :"+d.getFullYear(2056));
-        console.log("Time :"+d.getTime());
-        //parsing
-        var sec=Date.parse('Dec ,31,2020 ');
-        console.log(sec);//gives timestamp
-        //compare dates
-        var d1,d2;
-        d1=new Date();
-        d2=new Date();
-        d2.setFullYear(2020,0,10);
-        if (d2>d1)
+        var car=['Audi','Merc','Fiat'];
+        console.log(car);
+        console.log(car[0]);
+        //push another array element
+        car.push("Volvo");
+        console.log(car);
+        console.log(car[5]);
+        var car2=new Array('Nissan','Suboro','Mustang');
+        console.log(car2);
+        //soet array in order
+        console.log("Sorting :"+car.sort());
+        for (i=0;i<car.length;i++)
         {
-            console.log("Yes");
+            console.log(car[i]);
         }
-        else{
-            console.log("False");
-        }
+        //check wether is array
+        console.log("Check Array :"+Array.isArray(car));
+        console.log("Join :"+car.join('|'));//seperates the value of array as parameter specified
+        //push and pop
+        car.push("Honda");
+        console.log(car);
+        car.pop();
+        console.log("Pop :"+car);
+        //Add element at the beginning of array
+        car.shift();
+        console.log("Shift :"+car);
+        car.unshift("Audi");
+        console.log("Unshift :"+car);
+        //deleting an element
+        delete car[0];
+        console.log("Delete :"+car);
+        console.log(car);
+        //splice ->add element at any index
+        var car=['Audi','Merc','Fiat'];
+        car.splice(2,0,"Toyota","Mehendra");//2->add two element,0->remove element.
+        console.log("Splice Add :"+car);
+        car.splice(0,1,);
+        console.log("Splice Delete :"+car);
+        //Joining the array
+        var car1=['Archit','Jai'];
+        var conacat=car.concat(car1);
+        console.log("Concat :"+conacat);
+        //Reverse an array
+        console.log("Reverse :"+car.reverse());
+        //sorting a numeric
+        var num=[10,3,23,45,34,134,54];
+        num.sort(function(a,b) {return (a-b)});//(b-a)-->reverse order
+        console.log("Sorting Number :"+num);
     </script>
 </html>
