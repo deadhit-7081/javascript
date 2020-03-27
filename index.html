@@ -13,53 +13,42 @@
         <p id="p5"></p>
 
     <script>
-        var car=['Audi','Merc','Fiat'];
-        console.log(car);
-        console.log(car[0]);
-        //push another array element
-        car.push("Volvo");
-        console.log(car);
-        console.log(car[5]);
-        var car2=new Array('Nissan','Suboro','Mustang');
-        console.log(car2);
-        //soet array in order
-        console.log("Sorting :"+car.sort());
-        for (i=0;i<car.length;i++)
+        //creating object
+        //var x1=new number();
+        function person(name,age)
         {
-            console.log(car[i]);
+            this.name=name;
+            this.age=age;
         }
-        //check wether is array
-        console.log("Check Array :"+Array.isArray(car));
-        console.log("Join :"+car.join('|'));//seperates the value of array as parameter specified
-        //push and pop
-        car.push("Honda");
-        console.log(car);
-        car.pop();
-        console.log("Pop :"+car);
-        //Add element at the beginning of array
-        car.shift();
-        console.log("Shift :"+car);
-        car.unshift("Audi");
-        console.log("Unshift :"+car);
-        //deleting an element
-        delete car[0];
-        console.log("Delete :"+car);
-        console.log(car);
-        //splice ->add element at any index
-        var car=['Audi','Merc','Fiat'];
-        car.splice(2,0,"Toyota","Mehendra");//2->add two element,0->remove element.
-        console.log("Splice Add :"+car);
-        car.splice(0,1,);
-        console.log("Splice Delete :"+car);
-        //Joining the array
-        var car1=['Archit','Jai'];
-        var conacat=car.concat(car1);
-        console.log("Concat :"+conacat);
-        //Reverse an array
-        console.log("Reverse :"+car.reverse());
-        //sorting a numeric
-        var num=[10,3,23,45,34,134,54];
-        num.sort(function(a,b) {return (a-b)});//(b-a)-->reverse order
-        console.log("Sorting Number :"+num);
+        var obj=new person("Jai",21);
+        console.log(obj);
+        //add
+        person.nationality="Indian";
+        console.log(person.nationality);
+        delete person.age;
+        console.log(person);
+        //for loops
+        for(i=0;i<10;i++)
+        {
+            console.log("For Loop :"+i);
+        }
+        var person2={Name:"Jai",Lastname:"Singh",age:21};
+        for (x in person2)
+        {
+            console.log("For in loop :"+x);//print keys
+            console.log("For in loop :"+person2[x]);//print values
+        }
+        //While loop
+        var i=0;
+        while(i<10)
+        {
+            console.log("While :"+i);
+            i++;
+        }
+        j=4;
+        do{
+            console.log("Do while :"+j);
+            i++;
+        }while(j>7);
     </script>
 </html>
