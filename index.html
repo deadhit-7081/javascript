@@ -6,16 +6,45 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
+        <h2>Date</h2>
     <script>
-        console.log(Math.random());//return random number b/t 0 and 1
-        //random number b/t 0-9
-        console.log("Random 0-9->"+Math.floor(Math.random()*10));
-        //random number b/t 0-99
-        console.log("Random 0-99->"+Math.floor(Math.random()*100));
-        //genetating random number b/t 2 numbers
-        var min=6;
-        var max=20;
-        console.log("Rand No b/t 2 numbers :"+Math.floor(Math.random()*(max-min)));
-
+        document.getElementById("p1").innerHTML=new Date();
+        //Creating date format mm/dd/yyyy
+        document.getElementById("p2").innerHTML=new Date('12/31/2010');
+        var d=new Date();
+        document.getElementById("p3").innerHTML=d;
+        document.getElementById("p4").innerHTML=d.toUTCString();//GMT format
+        document.getElementById("p5").innerHTML=d.toDateString();
+        //get method
+        console.log("Date :"+d.getDate());
+        console.log("Day :"+d.getDay());// 5->saturday
+        console.log("Year :"+d.getFullYear());
+        console.log("Time :"+d.getTime());//gives in milli seconde
+        //setDate
+        console.log("SetDate :"+d.setDate(09));
+        console.log("Date :"+d.getDate());
+        console.log("Day :"+d.getDay());
+        d.setYear(2056);
+        console.log("Year :"+d.getFullYear(2056));
+        console.log("Time :"+d.getTime());
+        //parsing
+        var sec=Date.parse('Dec ,31,2020 ');
+        console.log(sec);//gives timestamp
+        //compare dates
+        var d1,d2;
+        d1=new Date();
+        d2=new Date();
+        d2.setFullYear(2020,0,10);
+        if (d2>d1)
+        {
+            console.log("Yes");
+        }
+        else{
+            console.log("False");
+        }
     </script>
 </html>
