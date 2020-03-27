@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 <html>
-    //use css in style tag
-    <style>
-        #container
-        {
-            width:300px;
-            height:300px;
-            background:yellow;
-            position:relative;
-        }
-        #annimate
-        {
-            width:50px;
-            height: 50px;
-            position:absolute;
-            background: red;
-        }
-    </style>
-    <H1>DOM Annimations</H1>
-    <button onclick="moveon()">Animate</button>
+    <H1>DOM EventsHandlers</H1>
     <body>
-        <p id="p1"></p>
-    <div id="container">
-        <div id="annimate"></div>
+        <p id="p1"> This will hide on button click</p>
+        <button onclick="hide()">Hide</button>
+        <button onclick="visible()">Visible</button>
+        <button id="b2">Click Me</button>
     </div>
+    <p id="windowtest"></p>
+    <button id="b3">Click Me</button>
     <script>
-        function moveon()
+        function hide()
         {
-            var smallbox=document.getElementById("annimate");
-            var pos=0;
-            var myInterval=setInterval(frame,5);//every 5 second update the frame function
-            function frame()
-            {
-                if(pos==250)
-                {
-                    clearInterval(myInterval);//stop block at end of container
-                }
-                pos++;
-                smallbox.style.top=pos + "px";
-                smallbox.style.left=pos + "px";
-            }
+            document.getElementById("p1").style.visibility="hidden";
         }
+        function visible()
+        {
+            document.getElementById("p1").style.visibility="visible";
+        }
+        //Using EventListner
+        var ele=document.getElementById("b2");
+        ele.addEventListener('click',function(){alert("Hi Archit");});
+        window.addEventListener("resize",callrezize());
+        function callrezize()
+        {
+            document.getElementById("windowtest").innerHTML=Math.random();
+        }
+        var butt=document.getElementById("b3");
+        butt.addEventListener("click",hide);
+        butt.addEventListener("dblclick",visible);
     </script>
     </body>
 </html>
