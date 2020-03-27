@@ -6,48 +6,28 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
-        <h2>Date</h2>
-        <p id="p2"></p>
+        <h2>HTML DOM</h2>
+        <p id="p2" onmouseover="myFunction()" onmouseout="myFunction2()"></p>
         <p id="p3"></p>
         <p id="p4"></p>
         <p id="p5"></p>
+        <h2 class="c1"></h2>
 
     <script>
-        //creating object
-        //var x1=new number();
-        function person(name,age)
+        document.getElementById("p2").innerHTML="Hello DOM";
+        //getElementById(" ")-->DOM(document Method)
+        //.innerHTML-->property
+        document.getElementsByTagName('h2').innerHTML="Jai Ho";
+        document.getElementsByClassName('c1').innerHTML="Jai Ho";
+        //DOM CSS
+        document.getElementById("p2").style.fontSize="20px";
+        function myFunction()
         {
-            this.name=name;
-            this.age=age;
+            document.getElementById("p2").style.color="blue";
         }
-        var obj=new person("Jai",21);
-        console.log(obj);
-        //add
-        person.nationality="Indian";
-        console.log(person.nationality);
-        delete person.age;
-        console.log(person);
-        //for loops
-        for(i=0;i<10;i++)
+        function myFunction2()
         {
-            console.log("For Loop :"+i);
+            document.getElementById("p2").style.color="black";
         }
-        //Lable-->Name :{}
-        //with use of lable break can be used to jump any code block
-        var car=["Audi","Merc","Ford"];
-        text="";
-        console.log("Lable :");
-        list :{
-            text+=car[0];
-            text+=car[1];
-            break list;
-            text+=car[2];
-            text+=car[3];
-            text+=car[4];
-            text+=car[5];
-            text+=car[6];
-            text+=car[7];
-        }
-        console.log(text);
     </script>
 </html>
