@@ -32,23 +32,22 @@
         {
             console.log("For Loop :"+i);
         }
-        var person2={Name:"Jai",Lastname:"Singh",age:21};
-        for (x in person2)
-        {
-            console.log("For in loop :"+x);//print keys
-            console.log("For in loop :"+person2[x]);//print values
+        //Lable-->Name :{}
+        //with use of lable break can be used to jump any code block
+        var car=["Audi","Merc","Ford"];
+        text="";
+        console.log("Lable :");
+        list :{
+            text+=car[0];
+            text+=car[1];
+            break list;
+            text+=car[2];
+            text+=car[3];
+            text+=car[4];
+            text+=car[5];
+            text+=car[6];
+            text+=car[7];
         }
-        //While loop
-        var i=0;
-        while(i<10)
-        {
-            console.log("While :"+i);
-            i++;
-        }
-        j=4;
-        do{
-            console.log("Do while :"+j);
-            i++;
-        }while(j>7);
+        console.log(text);
     </script>
 </html>
