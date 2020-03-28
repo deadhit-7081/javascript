@@ -6,7 +6,8 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
-        <h2>HTML DOM</h2>
+        <h2>Regular Expression</h2>
+        //Syntax-->pattern/modifier
         <p id="p2" onmouseover="myFunction()" onmouseout="myFunction2()"></p>
         <p id="p3"></p>
         <p id="p4"></p>
@@ -14,24 +15,17 @@
         <h2 class="c1"></h2>
 
     <script>
-        //Type conversion
-        //into string
-        var x=40;
-        console.log("Num to String :"+x.toString());
-        console.log("Num to String :"+String(x));
-        //boolean to string
-        console.log("Boolean to String :"+String(false));
-        console.log("Boolean to String :"+true.toString());
-        //String to Number
-        console.log("String to Number :"+Number("1335"));
-        console.log("String to Number :"+Number(" "));
-        console.log("String to Number :"+Number(""));
-        console.log("String to Number :"+Number("39 398"));
-        //Boolean to Number
-        console.log("Boolean to Number :"+Number(false));
-        console.log("Boolean to Number :"+Number(true));
-        //Automatic type conversion
-        console.log(5+null);
-        console.log("5"+null);
+        var str="Hello Jai";
+        var n=str.search(/jai/);
+        console.log(n);//returns -1 as it is not found
+        var n=str.search(/Jai/);
+        console.log(n);
+        var n=str.search(/JAi/i);//i=modifier which stands for case in sensetive
+        console.log(n);
+        //test()
+        var pattern=/e/;
+        console.log(pattern.test("All things in life happens for good"));
+        //exec
+        console.log(pattern.exec("All things in life happens for good"));
     </script>
 </html>
