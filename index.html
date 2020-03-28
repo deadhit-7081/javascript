@@ -14,20 +14,24 @@
         <h2 class="c1"></h2>
 
     <script>
-        document.getElementById("p2").innerHTML="Hello DOM";
-        //getElementById(" ")-->DOM(document Method)
-        //.innerHTML-->property
-        document.getElementsByTagName('h2').innerHTML="Jai Ho";
-        document.getElementsByClassName('c1').innerHTML="Jai Ho";
-        //DOM CSS
-        document.getElementById("p2").style.fontSize="20px";
-        function myFunction()
-        {
-            document.getElementById("p2").style.color="blue";
-        }
-        function myFunction2()
-        {
-            document.getElementById("p2").style.color="black";
-        }
+        //Type conversion
+        //into string
+        var x=40;
+        console.log("Num to String :"+x.toString());
+        console.log("Num to String :"+String(x));
+        //boolean to string
+        console.log("Boolean to String :"+String(false));
+        console.log("Boolean to String :"+true.toString());
+        //String to Number
+        console.log("String to Number :"+Number("1335"));
+        console.log("String to Number :"+Number(" "));
+        console.log("String to Number :"+Number(""));
+        console.log("String to Number :"+Number("39 398"));
+        //Boolean to Number
+        console.log("Boolean to Number :"+Number(false));
+        console.log("Boolean to Number :"+Number(true));
+        //Automatic type conversion
+        console.log(5+null);
+        console.log("5"+null);
     </script>
 </html>
