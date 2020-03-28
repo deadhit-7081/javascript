@@ -6,26 +6,18 @@
     <body>
         <h1>This is my header ,Welcome</h1>
         <p id="p1">This is my para</p>
-        <h2>Regular Expression</h2>
-        //Syntax-->pattern/modifier
-        <p id="p2" onmouseover="myFunction()" onmouseout="myFunction2()"></p>
+        <h2>Hoisting</h2>
         <p id="p3"></p>
         <p id="p4"></p>
-        <p id="p5"></p>
-        <h2 class="c1"></h2>
-
+        <h3>Strict Mode</h3>
     <script>
-        var str="Hello Jai";
-        var n=str.search(/jai/);
-        console.log(n);//returns -1 as it is not found
-        var n=str.search(/Jai/);
-        console.log(n);
-        var n=str.search(/JAi/i);//i=modifier which stands for case in sensetive
-        console.log(n);
-        //test()
-        var pattern=/e/;
-        console.log(pattern.test("All things in life happens for good"));
-        //exec
-        console.log(pattern.exec("All things in life happens for good"));
+        x=5;//initilization
+        ele=document.getElementById("p3");
+        ele.innerHTML=x;
+        var x;//decleraing after function
+        "use strict";
+        y=12;
+        console.log(y);
+        
     </script>
 </html>
