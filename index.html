@@ -9,60 +9,14 @@
         <h2>Hoisting</h2>
         <p id="p3"></p>
         <p id="p4"></p>
-        <h3>JSON Parsing in Js</h3>
-        <p id="demo">Content fetch here</p>
-        <p id="demo1">Content fetch here</p>
+        <h3>JSON Stringify</h3>
     <script>
-        //var jsonobj='{"name":"Jai","age":21,"city":"India"}'
-       /* var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function()
-            {
-                if (this.readyState == 4 && this.status == 200) 
-                {
-                 // Typical action to be performed when the document is ready:
-                    document.getElementById("demo").innerHTML = xhttp.responseText;
-                }
-            };
-        xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
-        xhttp.send();*/
-        //var myobj=JSON.parse(jsonobj);
-        //console.log(myobj);
-        //accessing any element from request
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function()
-            {
-                if (this.readyState == 4 && this.status == 200) 
-                {
-                 // Typical action to be performed when the document is ready:
-                 var myobj=JSON.parse(xhttp.responseText);
-                    document.getElementById("demo1").innerHTML = myobj.userId+"--"+myobj.title;
-                }
-            };
-        xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
-        xhttp.send();
-        
-        //Handling dates
-        var person='{"name":"Jai","birth":"1999-03-09"}'
-        var myobj=JSON.parse(person);
-        myobj.birth=new Date(myobj.birth);
-        console.log(myobj.birth);
-        //Accesing date and function using function as json second parameter 
-        var person='{"name":"Jai","birth":"1999-03-09","age":"function(){ return 21;}"}'
-        var myobj=JSON.parse(person,function(key,value)
-        {
-            if(key==="birth")
-            {
-                return new Date(value);
-            }
-            else{
-                return value;
-            }
-        });
-        console.log(myobj.birth);
-        myobj.age=eval("("+myobj.age+")");//returns function of age
-        console.log(myobj.age);
-        //value of function
-        myobj.age=eval("("+myobj.age()+")");//returns function of age
-        console.log(myobj.age);
+        var person={
+            "name":"Jai",
+            "age":25,
+            "city":"Varanasi"
+        };
+        var myjson=JSON.stringify(person);//converts it into complete string
+        console.log(myjson);
     </script>
 </html>
