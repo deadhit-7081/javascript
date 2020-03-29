@@ -9,55 +9,60 @@
         <h2>Hoisting</h2>
         <p id="p3"></p>
         <p id="p4"></p>
-        <h3>Json Datatype</h3>
+        <h3>JSON Parsing in Js</h3>
+        <p id="demo">Content fetch here</p>
+        <p id="demo1">Content fetch here</p>
     <script>
-        //string
-        var x={"name":"Archit"};
-        console.log(x);
-        //number
-        x={"age":24};
-        console.log(x);
-        //object
-        x={
-            "employee":{"name":"Archit",
-            "age":23
+        //var jsonobj='{"name":"Jai","age":21,"city":"India"}'
+       /* var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                 // Typical action to be performed when the document is ready:
+                    document.getElementById("demo").innerHTML = xhttp.responseText;
+                }
+            };
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+        xhttp.send();*/
+        //var myobj=JSON.parse(jsonobj);
+        //console.log(myobj);
+        //accessing any element from request
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                 // Typical action to be performed when the document is ready:
+                 var myobj=JSON.parse(xhttp.responseText);
+                    document.getElementById("demo1").innerHTML = myobj.userId+"--"+myobj.title;
+                }
+            };
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+        xhttp.send();
+        
+        //Handling dates
+        var person='{"name":"Jai","birth":"1999-03-09"}'
+        var myobj=JSON.parse(person);
+        myobj.birth=new Date(myobj.birth);
+        console.log(myobj.birth);
+        //Accesing date and function using function as json second parameter 
+        var person='{"name":"Jai","birth":"1999-03-09","age":"function(){ return 21;}"}'
+        var myobj=JSON.parse(person,function(key,value)
+        {
+            if(key==="birth")
+            {
+                return new Date(value);
             }
-        }
-        console.log(x);
-        //array
-        x=
-        {
-            "employee":["John","Tom","Jai"]
-        };
-        console.log(x);
-        //boolean
-        x={"sale":true};
-        console.log(x);
-        //null
-        x={
-            "employee":null
-        };
-        console.log(x);
-        //Accessing JSON object value
-        x=
-        {
-            "name":"Jai",
-            "age":21,
-            "family":["Jai","Archit","Akhil"]
-        };
-        console.log(x.name);//dot notation
-        console.log(x["name"]);//bracket notation
-        //looping in json
-        for (i in x)
-        {
-            document.getElementById("p4").innerHTML+=i;
-        }
-        //accessing array element
-        console.log(x.family[1]);//1->position
-        //loop through array 
-        for (i in x.family)
-        {
-            document.getElementById("p3").innerHTML+=x.family[i];
-        }
+            else{
+                return value;
+            }
+        });
+        console.log(myobj.birth);
+        myobj.age=eval("("+myobj.age+")");//returns function of age
+        console.log(myobj.age);
+        //value of function
+        myobj.age=eval("("+myobj.age()+")");//returns function of age
+        console.log(myobj.age);
     </script>
 </html>
