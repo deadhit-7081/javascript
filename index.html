@@ -9,15 +9,55 @@
         <h2>Hoisting</h2>
         <p id="p3"></p>
         <p id="p4"></p>
-        <h3>Strict Mode</h3>
+        <h3>Json Datatype</h3>
     <script>
-        x=5;//initilization
-        ele=document.getElementById("p3");
-        ele.innerHTML=x;
-        var x;//decleraing after function
-        "use strict";
-        y=12;
-        console.log(y);
-        
+        //string
+        var x={"name":"Archit"};
+        console.log(x);
+        //number
+        x={"age":24};
+        console.log(x);
+        //object
+        x={
+            "employee":{"name":"Archit",
+            "age":23
+            }
+        }
+        console.log(x);
+        //array
+        x=
+        {
+            "employee":["John","Tom","Jai"]
+        };
+        console.log(x);
+        //boolean
+        x={"sale":true};
+        console.log(x);
+        //null
+        x={
+            "employee":null
+        };
+        console.log(x);
+        //Accessing JSON object value
+        x=
+        {
+            "name":"Jai",
+            "age":21,
+            "family":["Jai","Archit","Akhil"]
+        };
+        console.log(x.name);//dot notation
+        console.log(x["name"]);//bracket notation
+        //looping in json
+        for (i in x)
+        {
+            document.getElementById("p4").innerHTML+=i;
+        }
+        //accessing array element
+        console.log(x.family[1]);//1->position
+        //loop through array 
+        for (i in x.family)
+        {
+            document.getElementById("p3").innerHTML+=x.family[i];
+        }
     </script>
 </html>
