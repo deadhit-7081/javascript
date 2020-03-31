@@ -1,19 +1,12 @@
-//Rest operator
-function print()
+//Spread operator
+function print(...args)
 {
-    console.log(arguments);/*returns an object with key as 0,1,2,..
-     and value as being passed
-      in the 
-      function call*/
-    //convert into array
-    var arr=Array.prototype.slice.call(arguments);//insted of this in es6 we use rest operator
-    console.log(arr);
+    args=['<br>',...args,'</br>'];
+    console.log(args);
+    console.log(args.join(' '));
 }
-function print(age,name,...arr)
-{
-    console.log(age);
-    console.log(name);
-    console.log(arr);//returns array after 1st inde in function ,from {},..
-}
+const mess="helloworld";
+const a=[...mess];
+console.log(a);//converts into string
 
-print(1,"Jai",{},[1,2,3]);
+print("Hello","world!");
