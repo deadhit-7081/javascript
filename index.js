@@ -1,17 +1,19 @@
-//E5 logic
-function buy(item,amount)
+//Rest operator
+function print()
 {
-    if (amount === undefined)
-    {
-        amount =1;
-    }
-    amount;
-    item;
+    console.log(arguments);/*returns an object with key as 0,1,2,..
+     and value as being passed
+      in the 
+      function call*/
+    //convert into array
+    var arr=Array.prototype.slice.call(arguments);//insted of this in es6 we use rest operator
+    console.log(arr);
 }
-function buys(item="Choco",amount=3)//we can pass obj ,array etc.
+function print(age,name,...arr)
 {
-    amount;
-    item;
+    console.log(age);
+    console.log(name);
+    console.log(arr);//returns array after 1st inde in function ,from {},..
 }
-buy("eggs");
-buys();
+
+print(1,"Jai",{},[1,2,3]);
